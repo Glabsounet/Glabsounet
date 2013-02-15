@@ -1,0 +1,42 @@
+" My vim config
+" Gaby Czegany <Glabsounet@gmail.com>
+
+" {{{ General
+set ruler
+set mouse=a
+set shortmess=atI
+set hidden
+set showcmd
+call pathogen#infect()
+" }}}
+
+" {{{ Filetype 
+filetype on
+filetype plugin on
+filetype indent on
+" }}}
+
+" {{{ Search
+set hlsearch
+set ignorecase
+set smartcase
+" }}}
+
+" {{{ Tabs
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set noexpandtab
+" }}}
+
+" {{{ Colors
+syntax on
+colorscheme desert_custom
+"}}}
+
+" {{{ Plugin
+let g:epitech_plugin = 1  "Enable epitech plugin
+" }}}
+
+runtime mappings.vim

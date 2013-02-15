@@ -1,0 +1,56 @@
+/* General */
+!*background: rgb:27/28/22
+*foreground: rgb:98/98/c8
+*font: xft:Inconsolata:pixelsize=13
+!Xft.dpi:        96
+!Xft.antialias:  false
+!Xft.rgba:       none
+!Xft.hinting:    false
+
+/* Transparent */
+!scratch*transparent: true
+!scratch*shading: 110
+!scratch.depth: 32
+!scratch.background: rgba:1111/1111/1111/dddd
+!scratch.background: [95]#000000
+
+/* General Color */
+!black
+*color0:    #000000
+*color8:    #1e2236
+!red
+*color1:    #af0532
+*color9:    #fe0053
+!green
+*color2:    #00AA00
+*color10:   #00FF00
+!yellow
+*color3:    #b5b3ac
+*color3:    Yellow3
+*color11:   #f3dfb5
+*color11:   Yellow
+!blue
+*color4:    #334fc6
+*color12:   #637fe9
+!magenta
+*color5:    #5d37aa
+*color13:   #ac2afe
+!cyan
+*color6:    #009999
+*color6:    Cyan3
+*color14:   #00FFFF
+*color14:   Cyan
+!white
+*color7:    #b5b8e2
+*color15:   #ffffff
+
+/* Urxvt */
+urxvt*loginShell: true
+URxvt*background:	Black
+URxvt*scrollBar_right:	false
+URxvt*scrollBar:	false
+URxvt*colorBD:          #ffffff
+
+/* Font */
+!URxvt.boldFont: xft:Inconsolata:pixelsize=13:antialias=false
+!URxvt.italicFont: xft:Inconsolata:pixelsize=13:Italic

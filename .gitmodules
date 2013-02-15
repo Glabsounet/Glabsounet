@@ -1,0 +1,3 @@
+[submodule "vim/bundle/epitech"]
+	path = vim/bundle/epitech
+	url = git@github.com:Glabsounet/vim-epitech.git
