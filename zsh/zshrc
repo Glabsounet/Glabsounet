@@ -1,0 +1,30 @@
+bindkey -e
+
+setopt prompt_subst
+setopt interactivecomments
+setopt noflowcontrol
+
+export EDITOR="vim"
+export MANPAGER="less"
+export PATH="$PATH:.:/home/glabs/local/bin"
+
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+
+# Vcs info
+autoload -Uz vcs_info
+zstyle ':vcs_info:(svn*|git*):*' formats "%c %u [%s|%b]"
+zstyle ':vcs_info:*' formats "[%s|%b]"
+
+# Prompt.
+autoload -U colors && colors
+PROMPT="-- %B%{$fg[black]%}%~%b "
+RPROMPT='%B%{$fg[black]%}${vcs_info_msg_0_}%b'
+PROMPT2="%_: "
+precmd () { vcs_info }
+
+# Completion.
+autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*:cd:*' ignore-parents parent pwd

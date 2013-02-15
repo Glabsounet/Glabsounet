@@ -1,0 +1,33 @@
+# ~/.bashrc
+# Gaby Czegany <Glabsounet@gmail.com>
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+PATH=$PATH:.:~/bin
+EDITOR=vim
+
+alias emacs="emacs -nw"
+alias ne="emacs"
+alias m="make -s"
+
+[ -f $HOME/.bash_prompt ] && source $HOME/.bash_prompt
+
+# Speed mount my work
+gwork()
+{ 
+    GIT_OPT=/tmp/git
+
+    mkdir -p $GIT_OPT
+    [ $# -eq 1 ] && sudo mount /dev/sd${1}1 $GIT_OPT && sudo chown $USER -R $GIT_OPT
+    [ $# -eq 0 ] && sudo umount $GIT_OPT
+    unset GIT_OPT
+}
+
+# Useful for note, journal, etc
+log(){ date >> ~/log/$* ; cat >> ~/log/$* ; }

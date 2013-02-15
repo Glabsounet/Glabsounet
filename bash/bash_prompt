@@ -1,0 +1,70 @@
+#!/bin/bash
+# A simple prompt
+# Gaby Czegany <Glabsounet@gmail.com>
+
+ResetColours="\033[0m"
+BadInfo="\033[0;31m"
+GoodInfo="\033[0;32m"
+StandardInfo="\033[1;34m"
+Separator="\033[1;30m"
+
+[ $UID -eq 0 ] && UserColor="\033[1;31m" || UserColor="\033[1;34m"
+[ $UID -eq 0 ] && Prompt="#" || Prompt="$"
+
+function prompt_command {
+    # small hack for my opensuse
+    home=$(echo $HOME | sed -e "s:/$::")
+    wd=$(echo $PWD | sed -e "s:/$::")
+
+    # short working directory
+    if [[ $PWD != "/" ]]; then
+	swd=$(echo $wd | sed -e "s:${home}:~:" | sed -re "s:([^/]{2})[^/]+/:\1/:g")
+    else
+	swd='/'
+    fi
+
+    # jobs control zone
+    jcz=$(jobs | wc -l)
+    [[ $jcz -eq 0 ]] && jcz=" "
+
+    # cvs zone, only git for now
+    if [[ $(git status 2> /dev/null) ]]; then
+	# Symbols:
+	# G: [G]it repo.
+	# C: un[c]ommitted stuff.
+	# S: Not [s]taged files.
+	# U: [U]ntracked files.
+	cvs="G"
+	[[ $(git status | grep -e "committed:") ]] && committed="C" || committed=" "
+	[[ $(git status | grep -e "Untracked ") ]] && notstaged="U" || notstaged=" "
+	[[ $(git status | grep -e "not staged") ]] && notstaged="S"
+    else
+	cvs=" "
+	committed=" "
+	notstaged=" "
+    fi
+}
+
+# executed before prompt
+PROMPT_COMMAND=prompt_command
+
+[[ $(tty | grep -e "pts") ]] \
+    && TITLEBAR="\[\033]0;[$USER][\W]\007\]" \
+    || TITLEBAR=""
+
+PS1="$TITLEBAR\
+\[${Separator}\][\[${ResetColours}\]\
+\[$StandardInfo\]\${jcz}\[$ResetColours\]\
+\[${Separator}\]]\[${ResetColours}\]\
+\[${Separator}\][\[${ResetColours}\]\
+\[${StandardInfo}\]\${cvs}\[${ResetColours}\]\
+\[${GoodInfo}\]\${committed}\[${ResetColours}\]\
+\[${BadInfo}\]\${notstaged}\[${ResetColours}\]\
+\[${Separator}\]]\[${ResetColours}\]\
+\[${Separator}\][\[${ResetColours}\]\
+\[$StandardInfo\]\${swd}\[${ResetColours}\]\
+\[${Separator}\]]\[${ResetColours}\]\
+\[$UserColor\] ${Prompt} \[${ResetColours}\]"
+
+# keep environment clean. 
+unset ResetColours BadInfo GoodInfo StandardInfo Separator UserColor Prompt TITLEBAR
