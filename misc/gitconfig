@@ -14,4 +14,4 @@
 	co	= checkout
 	st	= status
 	br	= branch
-	slog	= log --color --graph --abbrev-commit
+	lg	= log --color --graph --abbrev-commit --oneline

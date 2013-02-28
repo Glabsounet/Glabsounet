@@ -10,6 +10,7 @@ export PATH="$PATH:.:/home/glabs/local/bin"
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
+alias ocaml='rlwrap ocaml'
 
 # Vcs info
 autoload -Uz vcs_info

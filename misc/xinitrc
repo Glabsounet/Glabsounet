@@ -2,7 +2,6 @@
 
 redshift -l 48:2 -t 5700:4000 -m vidmode &
 urxvtd -q -o -f
-wicd-client --tray &
-#exec awesome
+xsetroot -cursor_name left_ptr
 exec xmonad
 
