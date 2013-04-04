@@ -10,6 +10,7 @@ export PATH="$PATH:.:/home/glabs/local/bin"
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
+alias valgrind='valgrind --leak-check=full --show-reachable=yes'
 alias ocaml='rlwrap ocaml'
 
 # Vcs info
@@ -29,3 +30,7 @@ autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+# Bindkey URxvt
+bindkey "\e\e[D" backward-word
+bindkey "\e\e[C" forward-word
