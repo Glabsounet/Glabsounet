@@ -15,3 +15,5 @@
 	st	= status
 	br	= branch
 	lg	= log --color --graph --abbrev-commit --oneline
+[push]
+	default = simple
