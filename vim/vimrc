@@ -7,7 +7,6 @@ set mouse=a
 set shortmess=atI
 set hidden
 set showcmd
-call pathogen#infect()
 " }}}
 
 " {{{ Filetype 
