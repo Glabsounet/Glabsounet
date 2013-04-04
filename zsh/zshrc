@@ -6,7 +6,7 @@ setopt noflowcontrol
 
 export EDITOR="vim"
 export MANPAGER="less"
-export PATH="$PATH:.:/home/glabs/local/bin"
+export PATH="$PATH:.:/home/glabs/bin"
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
