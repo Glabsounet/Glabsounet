@@ -13,7 +13,7 @@ let s:login = "czegan_g"
 
 let s:date_format = "%a %b %e %H:%M:%S %Y"
 
-function! GetComments()
+function! Epitech_GetComments()
   if &ft == "c"
     let comments = ["/*", "** ", "*/"]
   elseif &ft == "make"
