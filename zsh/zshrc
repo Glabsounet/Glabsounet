@@ -9,29 +9,48 @@ export MANPAGER="less"
 export MANPATH="$MANPATH:.:/home/glabs/local/share/man"
 export PATH="$PATH:.:/home/glabs/local/bin"
 
+# Alias
+alias pu='pushd'
+alias po='popd'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias valgrind='valgrind --leak-check=full --show-reachable=yes'
 alias ocaml='rlwrap ocaml'
+alias csi='rlwrap csi'
+
+# Hash
+hash -d episvn='svn+ssh://kscm@koala-rendus.epitech.eu'
 
 # Vcs info
 autoload -Uz vcs_info
 zstyle ':vcs_info:(svn*|git*):*' formats "%c %u [%s|%b]"
 zstyle ':vcs_info:*' formats "[%s|%b]"
 
-# Prompt.
+# Prompt
 autoload -U colors && colors
 PROMPT="-- %B%{$fg[black]%}%~%b "
 RPROMPT='%B%{$fg[black]%}${vcs_info_msg_0_}%b'
 PROMPT2="%_: "
-precmd () { vcs_info }
+precmd () {vcs_info}
 
-# Completion.
+# Completion
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
-# Bindkey URxvt
+# From zsh-lovers
+rationalise-dot() {
+  if [[ $LBUFFER = *.. ]]; then
+    LBUFFER+=/..
+  else
+    LBUFFER+=.
+  fi
+}
+
+# Binkeys
+zle -N rationalise-dot
+bindkey . rationalise-dot
+
 bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
