@@ -20,6 +20,11 @@ alias csi='rlwrap csi'
 
 # Hash
 hash -d episvn='svn+ssh://kscm@koala-rendus.epitech.eu'
+hash -d c='/home/glabs/code'
+hash -d w='/home/glabs/code/work'
+hash -d v='/home/glabs/code/view'
+hash -d a='/home/glabs/code/archive'
+hash -d conf='/home/glabs/.config'
 
 # Vcs info
 autoload -Uz vcs_info
