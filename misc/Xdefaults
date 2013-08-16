@@ -8,11 +8,11 @@
 !Xft.hinting:    false
 
 /* Transparent */
-!scratch*transparent: true
-!scratch*shading: 110
-!scratch.depth: 32
-!scratch.background: rgba:1111/1111/1111/dddd
-!scratch.background: [95]#000000
+!scratchpad*transparent: true
+!scratchpad*shading: 110
+scratchpad.depth: 32
+scratchpad.background: rgba:1111/1111/1111/dddd
+!scratchpad.background: [95]#000000
 
 /* General Color */
 !black

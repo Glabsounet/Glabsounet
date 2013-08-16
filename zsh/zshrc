@@ -9,7 +9,6 @@ export MANPAGER="less"
 export MANPATH="$MANPATH:.:/home/glabs/local/share/man"
 export PATH="$PATH:.:/home/glabs/local/bin"
 
-# Alias
 alias pu='pushd'
 alias po='popd'
 alias grep='grep --color=auto'
@@ -18,12 +17,12 @@ alias valgrind='valgrind --leak-check=full --show-reachable=yes'
 alias ocaml='rlwrap ocaml'
 alias csi='rlwrap csi'
 
-# Hash
 hash -d episvn='svn+ssh://kscm@koala-rendus.epitech.eu'
 hash -d c='/home/glabs/code'
 hash -d w='/home/glabs/code/work'
 hash -d v='/home/glabs/code/view'
 hash -d a='/home/glabs/code/archive'
+hash -d d='/home/glabs/code/done'
 hash -d conf='/home/glabs/.config'
 
 # Vcs info
@@ -59,3 +58,9 @@ bindkey . rationalise-dot
 
 bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
+
+# Laziness
+[[ $TTY == /dev/tty1 ]] \
+  && (( $UID ))         \
+  && [[ -z $DISPLAY ]]  \
+  && exec startx

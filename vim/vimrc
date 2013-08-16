@@ -2,6 +2,7 @@
 " Gaby Czegany <Glabsounet@gmail.com>
 
 " {{{ General
+execute pathogen#infect()
 set ruler
 set mouse=a
 set shortmess=atI
@@ -34,9 +35,5 @@ set smartindent
 syntax on
 colorscheme desert_custom
 "}}}
-
-" {{{ Plugin
-let g:epitech_plugin = 1  "Enable epitech plugin
-" }}}
 
 runtime mappings.vim
