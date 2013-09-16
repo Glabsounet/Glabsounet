@@ -23,6 +23,8 @@ hash -d w='/home/glabs/code/work'
 hash -d v='/home/glabs/code/view'
 hash -d a='/home/glabs/code/archive'
 hash -d d='/home/glabs/code/done'
+hash -d e='/home/glabs/essays'
+hash -d p='/home/glabs/papers'
 hash -d conf='/home/glabs/.config'
 
 # Vcs info
@@ -42,6 +44,18 @@ autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+papers() {
+    if [[ $# -eq 0 ]]; then
+	echo "Usage: papers papers_name" &> /dev/stderr
+	return 1
+    else
+	mkdir -p ~p/unsorted
+	scanimage > ~p/unsorted/$1.png
+	cd ~p/unsorted
+	return 0
+    fi
+}
 
 # From zsh-lovers
 rationalise-dot() {

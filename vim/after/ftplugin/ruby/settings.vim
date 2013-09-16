@@ -1,4 +1,4 @@
-set keywordprg=pydoc
+set keywordprg=ri
 
 " {{{ Tabs
 setlocal autoindent

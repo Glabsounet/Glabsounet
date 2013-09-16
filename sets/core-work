@@ -1,0 +1,11 @@
+app-editors/vim
+app-portage/g-cpan
+dev-lang/ghc
+dev-lang/ocaml
+dev-lang/perl
+dev-lisp/sbcl
+dev-python/ipdb
+dev-python/ipython
+dev-vcs/git
+dev-vcs/mercurial
+dev-vcs/subversion
