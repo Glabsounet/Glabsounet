@@ -1,29 +1,7 @@
 " My vim config
 " Gaby Czegany <Glabsounet@gmail.com>
 
-" {{{ Search
-set hlsearch
-set ignorecase
-set smartcase
-set rtp+=~/.vim/bundle/vundle/
-" }}}
-
-" {{{ Plugins 
-filetype off
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'godlygeek/tabular'
-Bundle 'pbrisbin/html-template-syntax'
-Bundle 'Lokaltog/vim-easymotion'
-" }}}
-
-" {{{ Filetype 
-filetype on
-filetype plugin on
-filetype indent on
-" }}}
-
-" {{{ General
+" General {{{
 set hidden
 set showcmd
 set nocompatible
@@ -32,9 +10,31 @@ set scrolloff=5
 set mouse=a
 set shortmess=atI
 set t_Co=256
+set rtp+=~/.vim/bundle/vundle/
 " }}}
 
-" {{{ Tabs
+" Search {{{
+set hlsearch
+set ignorecase
+set smartcase
+" }}}
+
+" Plugins {{{
+filetype off
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
+Bundle 'pbrisbin/html-template-syntax'
+Bundle 'Lokaltog/vim-easymotion'
+" }}}
+
+" Filetype {{{
+filetype on
+filetype plugin on
+filetype indent on
+" }}}
+
+" Tabs {{{
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
@@ -43,7 +43,7 @@ set noexpandtab
 set smartindent
 " }}}
 
-" {{{ Colors
+" Colors {{{
 syntax on
 colorscheme desert_custom
 " }}}

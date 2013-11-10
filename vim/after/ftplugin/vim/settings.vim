@@ -1,12 +1,12 @@
 set keywordprg=":help"
 
-" {{{ Tabs
+" Tabs {{{
 set tabstop=8
 set softtabstop=2
 set shiftwidth=2
 " }}}
-"
-" {{{ Folding
+
+" Folding {{{
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldlevel=1

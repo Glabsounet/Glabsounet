@@ -1,6 +1,6 @@
 set keywordprg=pydoc
 
-" {{{ Tabs
+" Tabs {{{
 setlocal autoindent
 setlocal expandtab
 setlocal tabstop=2

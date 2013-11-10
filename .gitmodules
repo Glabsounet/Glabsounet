@@ -1,3 +1,0 @@
-[submodule "vim/bundle/tablatur"]
-	path = vim/bundle/tablatur
-	url = git@github.com:godlygeek/tabular.git

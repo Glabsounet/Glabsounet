@@ -1,8 +1,8 @@
-" ((( General
+" General {{{
 setlocal comments=s:/*,m:**,ex:*/
 " }}}
 
-" {{{ Tabulation
+" Tabulation {{{
 setlocal autoindent
 setlocal shiftwidth=2
 setlocal softtabstop=8
