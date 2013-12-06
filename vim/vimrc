@@ -26,6 +26,7 @@ Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'pbrisbin/html-template-syntax'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'mileszs/ack.vim'
 " }}}
 
 " Filetype {{{

@@ -13,6 +13,7 @@ nnoremap    <leader>bb	    :buffer #<cr>
 nnoremap    <leader>bc	    :ls<cr>:buffer 
 
 nnoremap    <leader>cc	    :cc<cr>
+nnoremap    <leader>co	    :copen<cr>
 nnoremap    <leader>cn	    :cnext<cr>
 nnoremap    <leader>cp	    :cprevious<cr>
 " }}}
