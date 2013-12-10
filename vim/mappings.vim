@@ -2,7 +2,8 @@ let mapleader = " "
 let maplocalleader = ","
 
 " Normal {{{
-nnoremap    <leader>s	    :source %<cr>
+nnoremap    <leader>as	    :source %<cr>
+nnoremap    <leader>ac	    :source %:h<cr>
 
 nnoremap    <leader>bn	    :bnext<cr>
 nnoremap    <leader>bp	    :bprev<cr>
