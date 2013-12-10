@@ -2,10 +2,7 @@ let mapleader = " "
 let maplocalleader = ","
 
 " Normal {{{
-nnoremap    <leader>ev	    :tabe $MYVIMRC<cr>
-nnoremap    <leader>sv	    :source $MYVIMRC<cr>
-nnoremap    <leader>em	    :tabe ~/.vim/mappings.vim<cr>
-nnoremap    <leader>sm	    :source ~/.vim/mappings.vim<cr>
+nnoremap    <leader>s	    :source %<cr>
 
 nnoremap    <leader>bn	    :bnext<cr>
 nnoremap    <leader>bp	    :bprev<cr>
