@@ -10,8 +10,8 @@
 /* Transparent */
 !scratchpad*transparent: true
 !scratchpad*shading: 110
-scratchpad.depth: 32
-scratchpad.background: rgba:1111/1111/1111/dddd
+!scratchpad.depth: 32
+!scratchpad.background: rgba:1111/1111/1111/dddd
 !scratchpad.background: [95]#000000
 
 /* General Color */

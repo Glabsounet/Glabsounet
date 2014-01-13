@@ -9,6 +9,7 @@ set ruler
 set scrolloff=5
 set mouse=a
 set shortmess=atI
+set listchars=trail:-
 set t_Co=256
 set rtp+=~/.vim/bundle/vundle/
 " }}}
@@ -27,6 +28,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'pbrisbin/html-template-syntax'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mileszs/ack.vim'
+"let g:ycm_seed_identifiers_with_syntax = 0
 " }}}
 
 " Filetype {{{

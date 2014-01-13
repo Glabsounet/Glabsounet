@@ -15,7 +15,7 @@ runCmd :: MonadIO m => m ()
 runCmd = spawn $ "exe=`dmenu_run -b -fn " ++ myFont ++ "` && eval \"exec $exe\""
 
 runPdf :: MonadIO m => m ()
-runPdf = spawn $ "exe=`find . -name *.pdf |"
+runPdf = spawn $ "exe=`find ~ -name *.pdf |"
                ++ "dmenu -b -p Zathura -fn " ++ myFont ++ "`"
                ++ "&& eval \"exec zathura $exe\""
 
@@ -35,6 +35,7 @@ myManageHook = composeAll $ concat
     [ [ manageDocks]
     , [ classRole =? "browser"          --> doShift "1"]
     , [ className =? "Pidgin"           --> doShift "9"]
+    , [ classRole =? "vlc-video"        --> doCenterFloat]
     , [ className =? "Xmessage"         --> doCenterFloat]
     , [ className =? "Plugin-container" --> doCenterFloat]
     , [ isDialog                        --> doCenterFloat]

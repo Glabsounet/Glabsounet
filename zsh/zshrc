@@ -17,6 +17,7 @@ alias valgrind='valgrind --leak-check=full --show-reachable=yes'
 alias ocaml='rlwrap ocaml'
 alias csi='rlwrap csi'
 
+hash -d epigit='czegan_g@git.epitech.eu:'
 hash -d episvn='svn+ssh://kscm@koala-rendus.epitech.eu'
 hash -d c='/home/glabs/code'
 hash -d w='/home/glabs/code/work'
