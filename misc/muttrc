@@ -1,0 +1,18 @@
+# Set up mutt to use our local maildir:
+set mbox_type = Maildir
+set folder = /var/mail/glabs/
+set spoolfile = "+dev/INBOX"  # This is your 'primary inbox'
+
+color normal default default
+
+# I manually manage the mailbox command so that my mailboxes come up
+# in the order I want.
+mailboxes +dev #="acc2/acc2" ="acc1/acc1.folder1" # ... Keep going with more. 
+
+# One very useful feature are folder hooks which change
+# options depending on the folder you are viewing:
+
+# for instance you could do
+folder-hook dev set from="Glabsounet<Glabsounet@gmail.com>"
+
+#folder-hook dev set sendmail="msmtp-enqueue.sh -a acc1"; 

@@ -38,6 +38,8 @@ myManageHook = composeAll $ concat
     , [ classRole =? "vlc-video"        --> doCenterFloat]
     , [ className =? "Xmessage"         --> doCenterFloat]
     , [ className =? "Plugin-container" --> doCenterFloat]
+    , [ classRole =? "TamperData"       --> doCenterFloat]
+    , [ classRole =? "Preferences"      --> doCenterFloat]
     , [ isDialog                        --> doCenterFloat]
     , [ scratchpadManageHook (W.RationalRect 0.4 0.1 0.6 0.8)]
     ] where classRole = stringProperty "WM_WINDOW_ROLE"
