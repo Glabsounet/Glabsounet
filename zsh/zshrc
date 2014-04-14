@@ -28,6 +28,14 @@ hash -d e='/home/glabs/essays'
 hash -d p='/home/glabs/papers'
 hash -d conf='/home/glabs/.config'
 
+# History
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+export ISTSIZE=2000
+export SAVEHIST=2000
+export HISTFILE=~/.history
+
+
 # Vcs info
 autoload -Uz vcs_info
 zstyle ':vcs_info:(svn*|git*):*' formats "%c %u [%s|%b]"
@@ -56,6 +64,23 @@ papers() {
 	cd ~p/unsorted
 	return 0
     fi
+}
+
+mirror() {
+    2=${2:-code}
+    3=${3:-192.168.1.10}
+    case "$1" in
+	pull)
+	    rsync -vaz --exclude="*.o" --delete $USER@${3}:~/${2} ~
+	    ;;
+	push)
+	    rsync -vaz --exclude="*.o" --delete ~/${2} $USER@${3}:~
+	    ;;
+	*)
+	    echo "usage: $0 {pull|push} [DEST] [HOST]"
+	    return 1
+	    ;;
+    esac
 }
 
 # From zsh-lovers
