@@ -66,18 +66,19 @@ papers() {
     fi
 }
 
+compctl -x 'p[1]' -k "(pull push)" - 'p[2]' -g '*(/)' - 'p[3]' -k "(192.168.1.10)" -- mirror
 mirror() {
-    2=${2:-code}
+    2=${2:-~/code}
     3=${3:-192.168.1.10}
     case "$1" in
 	pull)
-	    rsync -vaz --exclude="*.o" --delete $USER@${3}:~/${2} ~
+	    rsync ${*[4,-1]} -vaz --exclude="*.o" --delete $USER@${3}:${2} ~
 	    ;;
 	push)
-	    rsync -vaz --exclude="*.o" --delete ~/${2} $USER@${3}:~
+	    rsync ${*[4,-1]} -vaz --exclude="*.o" --delete ${2} $USER@${3}:~
 	    ;;
 	*)
-	    echo "usage: $0 {pull|push} [DEST] [HOST]"
+	    echo "usage: $0 {pull|push} [DEST:~/code] [HOST:192.168.1.10] [RSYNC_OPTION...]"
 	    return 1
 	    ;;
     esac
