@@ -9,10 +9,11 @@ export MANPAGER="less"
 export MANPATH="$MANPATH:.:/home/glabs/local/share/man"
 export PATH="$PATH:.:/home/glabs/local/bin"
 
+alias pwd=' pwd'
+alias ls=' ls --color=auto'
 alias pu='pushd'
 alias po='popd'
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
 alias valgrind='valgrind --leak-check=full --show-reachable=yes'
 alias ocaml='rlwrap ocaml'
 alias csi='rlwrap csi'
