@@ -1,5 +1,5 @@
 XDG_DESKTOP_DIR="/home/glabs/"
-XDG_DOWNLOAD_DIR="/home/glabs/downloads"
+XDG_DOWNLOAD_DIR="/home/glabs/downloads/unsorted"
 XDG_TEMPLATES_DIR="/home/glabs/"
 XDG_PUBLICSHARE_DIR="/home/glabs/"
 XDG_DOCUMENTS_DIR="/home/glabs/"
