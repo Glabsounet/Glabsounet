@@ -85,6 +85,12 @@ mirror() {
     esac
 }
 
+f() {
+    local p=$argv[-1]
+    [[ -d $p ]] && { argv[-1]=(); } || p='.'
+    find $p ! -type d | sed 's:^./::' | egrep "${@:-.}"
+}
+
 # From zsh-lovers
 rationalise-dot() {
   if [[ $LBUFFER = *.. ]]; then
