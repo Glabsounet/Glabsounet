@@ -106,12 +106,20 @@ rationalise-dot() {
   fi
 }
 
+foreground-vi() {
+    fg %vi
+}
+
 # Binkeys
 zle -N rationalise-dot
 bindkey . rationalise-dot
 
+zle -N foreground-vi
+bindkey '^Z' foreground-vi
+
 bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
+bindkey "^R" history-incremental-pattern-search-backward
 
 # Laziness
 [[ $TTY == /dev/tty1 ]] \
