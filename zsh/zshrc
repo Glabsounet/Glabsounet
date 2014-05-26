@@ -91,6 +91,12 @@ f() {
     find $p ! -type d | sed 's:^./::' | egrep "${@:-.}"
 }
 
+wd() {
+    local d=${SWAPD:-~}
+    export SWAPD=$(pwd)
+    [[ $# -eq 0 ]] && cd ${d} || ${1}
+}
+
 # From zsh-lovers
 rationalise-dot() {
   if [[ $LBUFFER = *.. ]]; then
