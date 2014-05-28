@@ -17,6 +17,7 @@ alias grep='grep --color=auto'
 alias valgrind='valgrind --leak-check=full --show-reachable=yes'
 alias ocaml='rlwrap ocaml'
 alias csi='rlwrap csi'
+alias cal='cal -3 -m'
 
 hash -d epigit='czegan_g@git.epitech.eu:'
 hash -d episvn='svn+ssh://kscm@koala-rendus.epitech.eu'
