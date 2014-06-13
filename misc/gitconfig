@@ -8,6 +8,7 @@
 	email	= Glabsounet@gmail.com
 
 [alias]
+	update	= pull --rebase
 	last 	= log -1 HEAD
 	unstage = reset HEAD --
 	ci 	= commit

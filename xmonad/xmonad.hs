@@ -12,12 +12,12 @@ import qualified XMonad.StackSet as W
 myFont = "Inconsolata-9:normal"
 
 runCmd :: MonadIO m => m ()
-runCmd = spawn $ "exe=`dmenu_run -b -fn " ++ myFont ++ "` && eval \"exec $exe\""
+runCmd = spawn $ "exe=`dmenu_run -b -fn " ++ myFont ++ "` && eval \"exec '$exe'\""
 
 runPdf :: MonadIO m => m ()
 runPdf = spawn $ "exe=`find ~ -name *.pdf |"
                ++ "dmenu -b -p Zathura -fn " ++ myFont ++ "`"
-               ++ "&& eval \"exec zathura $exe\""
+               ++ "&& eval \"exec zathura '$exe'\""
 
 myKeys :: [(String, X())]
 myKeys =
@@ -35,6 +35,8 @@ myManageHook = composeAll $ concat
     [ [ manageDocks]
     , [ classRole =? "browser"          --> doShift "1"]
     , [ className =? "Pidgin"           --> doShift "9"]
+    , [ classRole =? "gimp-toolbox"     --> doFloat]
+    , [ classRole =? "gimp-dock"        --> doFloat]
     , [ classRole =? "vlc-video"        --> doCenterFloat]
     , [ className =? "Xmessage"         --> doCenterFloat]
     , [ className =? "Plugin-container" --> doCenterFloat]

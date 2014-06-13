@@ -5,6 +5,11 @@ if [ `uname -n` == "Gtux" ]; then
     xcompmgr -c &
 fi
 
+which redshift
+if [ $? -eq 0 ]; then
+    redshift -l 48:2 -t 5700:4000 -m vidmode &
+fi
+
 urxvtd -q -o -f
 xsetroot -cursor_name left_ptr
 exec xmonad
