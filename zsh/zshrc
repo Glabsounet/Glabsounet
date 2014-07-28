@@ -45,7 +45,7 @@ zstyle ':vcs_info:*' formats "[%s|%b]"
 
 # Prompt
 autoload -U colors && colors
-PROMPT="-- %B%{$fg[black]%}%~%b "
+PROMPT="%(!.%{$fg[red]%}.)-- %B%{$fg[black]%}%~%b "
 RPROMPT='%B%{$fg[black]%}${vcs_info_msg_0_}%b'
 PROMPT2="%_: "
 precmd () {vcs_info}
