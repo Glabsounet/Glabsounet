@@ -34,7 +34,7 @@ function! Epitech_CreateHeader(project_name)
 	\ comments[1] . expand("%:t") . " for " . a:project_name . " in " . getcwd() . "\n" .
 	\ comments[1] . "\n" .
 	\ comments[1] . "Made by " . s:name . "\n" .
-	\ comments[1] . "Login <" . s:login . "@epitech.net>\n" .
+	\ comments[1] . "Login   <" . s:login . "@epitech.eu>\n" .
 	\ comments[1] . "\n" .
 	\ comments[1] . "Started on  " . strftime(s:date_format) . " " . s:name . "\n" .
 	\ comments[1] . "Last Update " . strftime(s:date_format) . " " . s:name . "\n" .
