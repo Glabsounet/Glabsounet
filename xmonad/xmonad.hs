@@ -3,6 +3,8 @@ import XMonad.Actions.Submap (submap)
 import XMonad.Hooks.ManageDocks (manageDocks, avoidStruts)
 import XMonad.Hooks.ManageHelpers (isDialog, isFullscreen, doFullFloat, doCenterFloat)
 import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Layout.Minimize
+import XMonad.Layout.BoringWindows
 import XMonad.ManageHook
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Scratchpad
@@ -21,10 +23,26 @@ runPdf = spawn $ "exe=`find ~ -name *.pdf |"
 
 myKeys :: [(String, X())]
 myKeys =
-    [ ("M-q", myRestart)
+    [ ("M-q", return ()) -- do nothing
+    , ("M-S-q", myRestart)
+
+    , ("M-w", do
+        markBoring
+        withFocused minimizeWindow)
+
+    , ("M-S-w", do
+        sendMessage RestoreNextMinimizedWin
+        clearBoring)
+
+    , ("M-k", focusUp)
+    , ("M-j", focusDown)
+    , ("M-m", focusMaster)
+
     , ("M-p", runCmd)
     , ("M-S-p", runPdf)
+
     , ("M-s", scratchpadSpawnActionTerminal "urxvtc")
+
     , ("<XF86AudioMute>", spawn "amixer set Master toggle+")
     , ("<XF86AudioLowerVolume>", spawn "amixer set Master 10%-")
     , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 10%+")
@@ -34,7 +52,6 @@ myManageHook :: ManageHook
 myManageHook = composeAll $ concat
     [ [ manageDocks]
     , [ classRole =? "browser"          --> doShift "1"]
-    , [ className =? "Pidgin"           --> doShift "9"]
     , [ classRole =? "gimp-toolbox"     --> doFloat]
     , [ classRole =? "gimp-dock"        --> doFloat]
     , [ classRole =? "vlc-video"        --> doCenterFloat]
@@ -46,7 +63,7 @@ myManageHook = composeAll $ concat
     , [ scratchpadManageHook (W.RationalRect 0.4 0.1 0.6 0.8)]
     ] where classRole = stringProperty "WM_WINDOW_ROLE"
 
-myLayoutHook = avoidStruts . smartBorders $ Tall 1 (3 / 100) (1 / 2) ||| Full
+myLayoutHook = boringWindows . minimize . avoidStruts . smartBorders $ Tall 1 (3 / 100) (1 / 2) ||| Full
 
 main :: IO ()
 main = do
@@ -54,7 +71,7 @@ main = do
         { terminal              = "urxvtc"
         , normalBorderColor     = "#000000"
         , focusedBorderColor    = "#535d6c"
-        , modMask               = mod1Mask
+        , modMask               = mod4Mask
         , workspaces            = map show [1..9 :: Int]
         , manageHook            = myManageHook
         , layoutHook            = myLayoutHook
