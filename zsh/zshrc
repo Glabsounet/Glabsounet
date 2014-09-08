@@ -11,6 +11,7 @@ export PATH="$PATH:.:/home/glabs/local/bin"
 
 alias pwd=' pwd'
 alias ls=' ls --color=auto'
+alias cp='cp --preserve=all' # NEVER AGAIN
 alias pu='pushd'
 alias po='popd'
 alias grep='grep --color=auto'
@@ -46,7 +47,7 @@ zstyle ':vcs_info:*' formats "[%s|%b]"
 # Prompt
 autoload -U colors && colors
 PROMPT="%(!.%{$fg[red]%}.)-- %B%{$fg[black]%}%~%b "
-RPROMPT='%B%{$fg[black]%}${vcs_info_msg_0_}%b'
+#RPROMPT='%B%{$fg[black]%}${vcs_info_msg_0_}%b'
 PROMPT2="%_: "
 precmd () {vcs_info}
 

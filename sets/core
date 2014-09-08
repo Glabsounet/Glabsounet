@@ -1,7 +1,0 @@
-app-editors/vim
-app-portage/layman
-app-shells/zsh
-net-p2p/rtorrent
-
-@core-work
-@core-x11
