@@ -1,0 +1,14 @@
+app-admin/sudo
+app-editors/vim
+app-misc/rlwrap
+app-portage/layman
+app-shells/zsh
+dev-vcs/git
+dev-vcs/mercurial
+dev-vcs/subversion
+media-sound/alsa-utils
+net-misc/dhcpcd
+net-p2p/deluge
+sys-apps/ack
+sys-process/htop
+sys-devel/bc
