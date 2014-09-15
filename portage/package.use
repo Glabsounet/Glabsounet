@@ -15,7 +15,7 @@ media-libs/libsdl opengl
 media-libs/sdl-mixer vorbis
 media-video/vlc -qt4
 net-print/hplip scanner X hpcups 
-sys-devel/llvm clang
+sys-devel/llvm clang python
 sys-libs/zlib minizip
 x11-terms/rxvt-unicode 256-color -vanilla secondary-wheel -perl
 x11-base/xorg-server udev
