@@ -8,6 +8,9 @@ export EDITOR="vim"
 export MANPAGER="less"
 export MANPATH="$MANPATH:.:/home/glabs/local/share/man"
 export PATH="$PATH:.:/home/glabs/local/bin"
+export WORKON_HOME="$HOME/.virtualenvs"
+
+source /usr/bin/virtualenvwrapper_lazy.sh
 
 alias pwd=' pwd'
 alias ls=' ls --color=auto'
