@@ -98,8 +98,8 @@ f() {
 
 wd() {
     local d=${SWAPD:-~}
-    export SWAPD=$(pwd)
-    [[ $# -eq 0 ]] && cd ${d} || cd ${1}
+    export SWAPD="$(pwd)"
+    [[ $# -eq 0 ]] && cd "${d}" || cd "${1}"
 }
 
 # From zsh-lovers
